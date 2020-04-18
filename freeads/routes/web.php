@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 /*Route::get("/", "IndexController@showIndex");
 Auth::routes();
 
@@ -35,3 +35,14 @@ Route::post('/edit/user/', 'UserController@update')->name('user.update');
 Route::get('/edit/password/user/', 'UserController@passwordEdit')->name('password.edit');
 
 Route::post('/edit/password/user/', 'UserController@passwordUpdate')->name('password.update');
+//Auth::routes();
+
+//Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/annonces', 'AnnonceController@index')->name('ad.index');
+
+Route::get('/annonce', 'AnnonceController@create')->name('ad.create');
+
+Route::post('/annonce/create', 'AnnonceController@store')->name('ad.store');
+
+Route::post('/search', 'AnnonceController@search')->name('ad.search');
